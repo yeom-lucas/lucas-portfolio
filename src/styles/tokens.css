@@ -1,0 +1,58 @@
+:root {
+  /* ── 1층: 실제 색 (고정) ── */
+  --stone-50: #fafaf9;
+  --stone-100: #f5f5f4;
+  --stone-200: #e7e5e4;
+  --stone-400: #a8a29e;
+  --stone-500: #78716c;
+  --stone-700: #44403c;
+  --stone-800: #292524;
+  --stone-900: #1c1917;
+  --amber-400: #fbbf24;
+  --amber-700: #b45309;
+
+  /* ── 2층: 역할 (다크모드에서 이 블록만 바뀐다) ── */
+  --color-bg: var(--stone-50);
+  --color-surface: #ffffff;
+  --color-text: var(--stone-900);
+  --color-text-muted: var(--stone-500);
+  --color-border: var(--stone-200);
+  --color-border-strong: var(--stone-900);
+  --color-accent: var(--amber-700);
+
+  /* ── 간격: 4px 배수 ── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+
+  /* ── 글자 크기 ── */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 20px;
+  --text-xl: 28px;
+  --text-2xl: 40px;
+  --text-3xl: 56px;
+
+  /* ── 그 외 ── */
+  --font-sans: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
+    'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
+  --container: 56rem;
+  --radius: 6px;
+}
+
+/* 화면이 좁을 때 큰 글자만 줄인다 */
+@media (max-width: 640px) {
+  :root {
+    --text-3xl: 34px;
+    --text-2xl: 28px;
+    --text-xl: 22px;
+  }
+}
