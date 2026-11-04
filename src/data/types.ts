@@ -1,96 +1,65 @@
-export interface Metric {
-  /** "200만" */
-  value: string;
-  /** "일 정산 건수" */
-  label: string;
+/** "YYYY-MM" */
+export type YearMonth = string;
+
+export interface Project {
+  slug: string;
+  title: string;
+  /** 한 줄 소개 */
+  summary: string;
+  start: YearMonth;
+  /** null 이면 진행 중 */
+  end: YearMonth | null;
+  team: string;
+  description: string;
+  tech: string[];
+  tasks: string[];
+  learnings: string[];
+  /** 갤러리 이미지 (public 기준 경로) */
+  images: string[];
+  /** 로고형 썸네일. 없으면 첫 이미지, 그것도 없으면 label 타일 */
+  thumbnail?: string;
+  /** 이미지가 없을 때 타일에 쓸 짧은 이름 */
+  label?: string;
+  /** 메인 페이지에 노출 */
+  featured?: boolean;
 }
 
-export interface ThemedImage {
-  light: string;
-  dark: string;
-  /** 이미지 로딩 실패 시·스크린리더용 설명 */
-  alt: string;
-}
-
-export interface Profile {
+export interface Company {
+  slug: string;
   name: string;
-  /** 한 줄 정의 */
-  headline: string;
-  /** 3~4줄 소개 */
-  intro: string;
-  /** 첫 화면 성과 수치 (3개) */
-  highlights: Metric[];
-  links: {
-    github: string;
-    email: string;
-    resumePdf: string;
-  };
+  description: string;
+  roles: string[];
+  start: YearMonth;
+  end: YearMonth | null;
+  projects: Project[];
 }
-
-/** 주력 / 사용 경험 — 숙련도 퍼센트는 쓰지 않는다 (설계 §3.1) */
-export type SkillLevel = 'primary' | 'experienced';
 
 export interface Skill {
   name: string;
-  level: SkillLevel;
+  /** /skills/*.svg. 없으면 글자 배지 */
+  icon?: string;
 }
 
 export interface SkillGroup {
-  /** "언어" | "프레임워크" | "데이터" | "인프라" */
   category: string;
   items: Skill[];
 }
 
-export interface CareerEntry {
-  company: string;
-  /** "2021.03 – 현재" */
-  period: string;
-  title: string;
-  /** 2~3줄 */
-  achievements: string[];
+export interface Education {
+  school: string;
+  major: string;
+  start: YearMonth;
+  end: YearMonth;
+  status: string;
 }
 
-export interface ProjectSummary {
-  slug: string;
-  title: string;
-  summary: string;
-  period: string;
-  tech: string[];
-  /** 아키텍처 구성도 축소판 */
-  thumbnail: ThemedImage;
-  headlineMetric?: Metric;
-}
-
-export interface CodeSnippet {
-  language: string;
-  caption?: string;
-  code: string;
-}
-
-export interface Challenge {
-  title: string;
-  problem: string;
-  /** 고민한 선택지 */
-  options: string[];
-  /** 택한 이유 */
-  decision: string;
-  outcome: string;
-  code?: CodeSnippet;
-}
-
-export interface Project extends ProjectSummary {
-  /** 문제/배경 */
-  context: string;
-  role: {
-    teamSize?: number;
-    scope: string;
-  };
-  architecture: {
-    image: ThemedImage;
-    description: string;
-  };
-  /** 1~3개 */
-  challenges: Challenge[];
-  results: Metric[];
-  retrospective?: string;
+export interface Profile {
+  name: string;
+  /** 히어로에 쓰는 초성 */
+  monogram: string;
+  role: string;
+  intro: string[];
+  email: string;
+  github: string;
+  education: Education[];
 }

@@ -1,0 +1,12 @@
+.back {
+  display: inline-flex;
+  gap: 8px;
+  margin: 64px 0 40px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-sub);
+}
+
+.back:hover {
+  color: var(--color-text);
+}

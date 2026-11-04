@@ -1,0 +1,30 @@
+.header {
+  padding-bottom: 40px;
+}
+
+.period {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.period span {
+  margin-left: 8px;
+}
+
+.header h1 {
+  margin-top: 8px;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.desc {
+  margin-top: 8px;
+  color: var(--color-text-sub);
+  font-size: 15px;
+}
+
+.roles {
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 500;
+}

@@ -1,0 +1,104 @@
+.section {
+  padding: 96px 0;
+}
+
+.timeline {
+  list-style: none;
+}
+
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
+  padding: 0 0 64px 40px;
+}
+
+/* 세로 선 */
+.item::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  bottom: -12px;
+  width: 2px;
+  background: var(--color-border);
+}
+
+.item:last-child::before {
+  display: none;
+}
+
+/* 점 */
+.item::after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--gray-700);
+  background: var(--color-bg);
+}
+
+.item[data-current]::after {
+  border: 0;
+  background: var(--brand-gradient);
+  box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.15);
+}
+
+.period {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-text-muted);
+  font-size: 15px;
+}
+
+.period small {
+  font-size: 13px;
+}
+
+.body h3 {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.desc {
+  margin-top: 6px;
+  color: var(--color-text-sub);
+  font-size: 15px;
+}
+
+.roles {
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.more {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.more span {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.more:hover span {
+  transform: translateX(4px);
+}
+
+@media (max-width: 640px) {
+  .item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding-bottom: 48px;
+  }
+  .body h3 {
+    font-size: 24px;
+  }
+}
