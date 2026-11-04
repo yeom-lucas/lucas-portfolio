@@ -2,7 +2,7 @@
   position: fixed;
   z-index: 10;
   left: 50%;
-  top: calc(100vh - 220px);
+  top: calc(100svh - 76px);
   transform: translateX(-50%);
   display: flex;
   gap: 4px;
@@ -34,7 +34,7 @@
 }
 
 .nav a[aria-current] {
-  color: var(--color-text);
+  color: var(--brand-to);
   font-weight: 700;
   background: #fff;
 }

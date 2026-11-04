@@ -3,6 +3,7 @@ import type { Profile } from './types';
 export const profile: Profile = {
   name: '염승준',
   role: '백엔드 엔지니어',
+  avatar: '/profile.jpg',
   intro: [
     '구조를 먼저 설계해 변화에 유연한 서비스를 만드는 것을 좋아하고,',
     '함께 일하는 누구나 쉽게 읽을 수 있는 코드와 문서를 지향합니다.',

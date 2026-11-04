@@ -1,4 +1,6 @@
+import CountUp from '../components/CountUp';
 import { allProjects, formatDuration, profile, totalCareerMonths } from '../data';
+import { asset } from '../utils/asset';
 import styles from './Hero.module.css';
 
 export default function Hero() {
@@ -8,6 +10,14 @@ export default function Hero() {
   return (
     <section id="intro" className={styles.hero}>
       <div className="container">
+        <img
+          className={styles.avatar}
+          src={asset(profile.avatar)}
+          alt={`${profile.name} 캐리커처`}
+          width={112}
+          height={112}
+        />
+        <p className={styles.eyebrow}>{profile.role} 포트폴리오</p>
         <h1 className={styles.title}>
           보이지 않는 곳을
           <br />
@@ -27,14 +37,16 @@ export default function Hero() {
           <div>
             <dt>경력</dt>
             <dd>
-              {years}
-              <small>년</small> {months}
+              <CountUp to={Number(years)} />
+              <small>년</small> <CountUp to={Number(months)} />
               <small>개월</small>
             </dd>
           </div>
           <div>
             <dt>프로젝트 경험</dt>
-            <dd>{allProjects.length}</dd>
+            <dd>
+              <CountUp to={allProjects.length} />
+            </dd>
           </div>
         </dl>
       </div>

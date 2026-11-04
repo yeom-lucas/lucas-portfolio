@@ -56,6 +56,8 @@ export interface Education {
 export interface Profile {
   name: string;
   role: string;
+  /** 프로필 그림 (public 기준 경로) */
+  avatar: string;
   intro: string[];
   /** 오른쪽 소개 섹션 */
   about: {
