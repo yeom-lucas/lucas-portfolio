@@ -55,10 +55,13 @@ export interface Education {
 
 export interface Profile {
   name: string;
-  /** 히어로에 쓰는 초성 */
-  monogram: string;
   role: string;
   intro: string[];
+  /** 오른쪽 소개 섹션 */
+  about: {
+    summary: string;
+    strengths: { title: string; body: string }[];
+  };
   email: string;
   github: string;
   education: Education[];

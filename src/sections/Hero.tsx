@@ -8,15 +8,12 @@ export default function Hero() {
   return (
     <section id="intro" className={styles.hero}>
       <div className="container">
-        <p className={styles.monogram} aria-hidden="true">
-          {profile.monogram}
-        </p>
         <h1 className={styles.title}>
           안녕하세요,
           <br />
           {profile.role}
           <br />
-          {profile.name}입니다.
+          <span className={styles.name}>{profile.name}</span>입니다.
         </h1>
         <p className={styles.intro}>
           {profile.intro.map((line) => (

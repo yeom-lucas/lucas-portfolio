@@ -1,4 +1,4 @@
-// Notion 스킬 목록 + 실제 저장소들(build.gradle, pom.xml, package.json)에서 쓰는 기술
+// Notion 스킬 목록 + 직접 커밋한 저장소들(build.gradle, pom.xml, package.json)에서 쓰는 기술
 import type { SkillGroup } from './types';
 
 const icon = (name: string) => `/skills/${name}.svg`;
@@ -17,9 +17,6 @@ export const skillGroups: SkillGroup[] = [
       { name: 'Swagger', icon: icon('swagger') },
       { name: 'Thymeleaf', icon: icon('thymeleaf') },
       { name: 'Node.js', icon: icon('nodejs') },
-      { name: 'Express', icon: icon('express') },
-      { name: 'NestJS', icon: icon('nestjs') },
-      { name: 'Jest', icon: icon('jest') },
       { name: 'Gradle', icon: icon('gradle') },
       { name: 'Maven', icon: icon('maven') },
     ],
@@ -34,7 +31,6 @@ export const skillGroups: SkillGroup[] = [
       { name: 'Redis', icon: icon('redis') },
       { name: 'MS-SQL', icon: icon('mssql') },
       { name: 'Oracle', icon: icon('oracle') },
-      { name: 'Kafka', icon: icon('kafka') },
       { name: 'MQTT', icon: icon('mqtt') },
       { name: 'Firebase (FCM)', icon: icon('firebase') },
     ],
@@ -57,7 +53,6 @@ export const skillGroups: SkillGroup[] = [
     items: [
       { name: 'JavaScript', icon: icon('javascript') },
       { name: 'TypeScript', icon: icon('typescript') },
-      { name: 'React', icon: icon('react') },
       { name: 'Angular', icon: icon('angular') },
       { name: 'jQuery', icon: icon('jquery') },
       { name: 'Android', icon: icon('android') },

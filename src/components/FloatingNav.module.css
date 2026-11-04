@@ -45,3 +45,19 @@
     font-size: 13px;
   }
 }
+
+@media (min-width: 1200px) {
+  .nav,
+  .nav[data-scrolled] {
+    position: static;
+    transform: none;
+    align-self: center;
+    margin-top: 56px;
+    box-shadow: none;
+    background: #fff;
+  }
+
+  .nav a[aria-current] {
+    background: var(--color-subtle);
+  }
+}
