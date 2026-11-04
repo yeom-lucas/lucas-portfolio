@@ -16,8 +16,10 @@ export default function Hero() {
           <span className={styles.name}>{profile.name}</span>입니다.
         </h1>
         <p className={styles.intro}>
-          {profile.intro.map((line) => (
-            <span key={line}>{line}</span>
+          {profile.intro.map((line, i) => (
+            <span key={line} style={{ animationDelay: `${0.4 + i * 0.35}s` }}>
+              {line}
+            </span>
           ))}
         </p>
 

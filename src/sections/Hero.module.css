@@ -22,7 +22,11 @@
   margin-top: 32px;
   color: var(--color-text-sub);
   font-size: 18px;
-  animation: rise 0.7s 0.2s ease-out both;
+}
+
+/* 두 줄이 차례로 천천히 떠오른다 */
+.intro span {
+  animation: rise 1.2s ease-out both;
 }
 
 .stats {
