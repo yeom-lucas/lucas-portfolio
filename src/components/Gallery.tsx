@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './Gallery.module.css';
+import { asset } from '../utils/asset';
 
 /** 가로 스크롤 썸네일 + 클릭하면 크게 보기 */
 export default function Gallery({ images, title }: { images: string[]; title: string }) {
@@ -31,7 +32,7 @@ export default function Gallery({ images, title }: { images: string[]; title: st
         {images.map((src, i) => (
           <li key={src}>
             <button onClick={() => setIndex(i)} aria-label={`${title} 이미지 ${i + 1} 크게 보기`}>
-              <img src={src} alt="" loading="lazy" />
+              <img src={asset(src)} alt="" loading="lazy" />
             </button>
           </li>
         ))}
@@ -45,7 +46,7 @@ export default function Gallery({ images, title }: { images: string[]; title: st
       >
         {index !== null && (
           <figure>
-            <img src={images[index]} alt={`${title} 이미지 ${index + 1}`} />
+            <img src={asset(images[index])} alt={`${title} 이미지 ${index + 1}`} />
             <figcaption>
               {index + 1} / {images.length}
             </figcaption>

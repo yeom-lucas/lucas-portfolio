@@ -1,5 +1,6 @@
 import { thumbnailOf, type Project } from '../data';
 import styles from './ProjectThumb.module.css';
+import { asset } from '../utils/asset';
 
 /** 이미지가 있으면 이미지, 없으면 프로젝트 라벨을 그라데이션 타일로 */
 export default function ProjectThumb({ project }: { project: Project }) {
@@ -8,7 +9,7 @@ export default function ProjectThumb({ project }: { project: Project }) {
   if (src) {
     return (
       <div className={styles.thumb}>
-        <img src={src} alt={`${project.title} 썸네일`} loading="lazy" />
+        <img src={asset(src)} alt={`${project.title} 썸네일`} loading="lazy" />
       </div>
     );
   }

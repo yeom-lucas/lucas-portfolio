@@ -2,6 +2,7 @@ import { useState } from 'react';
 import SectionTitle from '../components/SectionTitle';
 import { skillGroups } from '../data';
 import styles from './Skills.module.css';
+import { asset } from '../utils/asset';
 
 const ALL = '전체';
 
@@ -33,7 +34,7 @@ export default function Skills() {
             g.items.map((s) => (
               <li key={`${g.category}-${s.name}`} className={styles.skill}>
                 <div className={styles.icon}>
-                  {s.icon ? <img src={s.icon} alt="" loading="lazy" /> : <span>{s.name}</span>}
+                  {s.icon ? <img src={asset(s.icon)} alt="" loading="lazy" /> : <span>{s.name}</span>}
                 </div>
                 <span className={styles.name}>{s.name}</span>
               </li>
