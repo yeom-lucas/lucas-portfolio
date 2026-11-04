@@ -9,9 +9,9 @@ export default function Hero() {
     <section id="intro" className={styles.hero}>
       <div className="container">
         <h1 className={styles.title}>
-          안녕하세요,
+          보이지 않는 곳을
           <br />
-          {profile.role}
+          단단하게 만드는
           <br />
           <span className={styles.name}>{profile.name}</span>입니다.
         </h1>
